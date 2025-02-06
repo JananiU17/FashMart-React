@@ -1,6 +1,6 @@
 .hero{
     height: 100vh;
-    background: linear-gradient(180deg, #fde1ff, #e1ffea22 60%);
+    background: linear-gradient(180deg, #f2dfb4, #e1ffea22 30%);
     display:flex; 
 }
 
@@ -15,12 +15,12 @@
 }
 .hero-left h2{
     color: #171717;
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 600;
 }
 .hero-left p{
     color: #171717;
-    font-size: 100px;
+    font-size: 80px;
     font-weight: 700;
 }
 .hero-hand-icon{
@@ -29,7 +29,7 @@
     gap: 20px;
 }
 .hero-hand-icon img{
-    width: 105px;
+    width: 100px;
 }
 .hero-latest-btn{
   display: flex;
@@ -44,6 +44,7 @@
   color: white;
   font-size: 22px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .hero-right{
