@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import './CSS/LoginSignup.css'
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import './CSS/LoginSignup.css';
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login");
@@ -14,7 +15,6 @@ const LoginSignup = () => {
   }
 
   const login = async () => {
-    console.log("Login Function Executed", formData);
     let responseData;
     await fetch('http://localhost:4000/api/users/login', {
       method: 'POST',
@@ -27,14 +27,13 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('auth-token', responseData.token);
-      window.location.replace("/");
+      toast.success("Logged In Successfully!", { onClose: () => window.location.replace("/") });
     } else {
-      alert(responseData.errors);
+      toast.error(responseData.errors || "Login Failed");
     }
   }
 
   const signup = async () => {
-    console.log("Signup Function Executed", formData);
     let responseData;
     await fetch('http://localhost:4000/api/users/signup', {
       method: 'POST',
@@ -47,9 +46,9 @@ const LoginSignup = () => {
 
     if (responseData.success) {
       localStorage.setItem('auth-token', responseData.token);
-      window.location.replace("/");
+      toast.success("Account Created Successfully!", { onClose: () => window.location.replace("/") });
     } else {
-      alert(responseData.errors);
+      toast.error(responseData.errors || "Signup Failed");
     }
   }
 
