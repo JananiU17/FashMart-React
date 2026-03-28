@@ -6,6 +6,8 @@ import LoginSignup from './Pages/LoginSignup';
 import Home from './Pages/Home';
 import Product from './Pages/Product';
 import Cart from './Pages/Cart';
+import Checkout from './Pages/Checkout';
+import Profile from './Pages/Profile';
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/banner_mens.png'
 import women_banner from './Components/Assets/banner_women.png'
@@ -28,10 +30,12 @@ function App() {
         <Route path=':productId' element={<Product/>}/> 
         </Route>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/checkout' element={<Checkout/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<LoginSignup/>}/>
         </Routes>
         <Footer/>
-     </BrowserRouter>
+      </BrowserRouter>
     </div>
   );
 }

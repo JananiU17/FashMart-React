@@ -42,11 +42,12 @@ app.post('/upload', upload.single('product'), (req, res) => {
 const productRouter = require('./routes/productRoute');
 const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute');
+const orderRouter = require('./routes/orderRoute');
 
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/cart', cartRouter);
-
+app.use('/api/orders', orderRouter);
 
 // Basic route
 app.get('/', (req, res) => {

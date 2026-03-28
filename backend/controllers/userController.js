@@ -70,7 +70,19 @@ const login = async (req, res) => {
     }
 }
 
+// Get User Data
+const getUserData = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select("-password -cartData");
+        res.json({ success: true, data: user });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, error: "Server Error" });
+    }
+}
+
 module.exports = {
     signup,
-    login
+    login,
+    getUserData
 };
