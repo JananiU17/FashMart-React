@@ -15,3 +15,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  transition: all 0.2s ease-in-out;
+}
+button:active {
+  transform: translateY(2px);
+}
+button:hover {
+  filter: brightness(0.95);
+}

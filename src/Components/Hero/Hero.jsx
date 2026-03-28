@@ -15,7 +15,7 @@ const Hero = () => {
             <p>collections</p>
             <p>for everyone</p>
         </div>
-        <div className="hero-latest-btn">
+        <div className="hero-latest-btn" onClick={() => document.getElementById("new-collections")?.scrollIntoView({behavior: "smooth"})} style={{cursor: "pointer"}}>
           <div>Latest Collection</div>
           <img src={arrow_icon} alt="" />
         </div>
